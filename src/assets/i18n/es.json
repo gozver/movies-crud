@@ -1,0 +1,32 @@
+{
+  "ACTORS": {
+    "FULL_NAME": "Nombre Completo",
+    "GENDER": "Género",
+    "BIRTHDATE": "Fecha de nacimiento",
+    "MOVIES": "Películas",
+
+    "FIRST_NAME": "Nombre",
+    "LAST_NAME": "Apellidos",
+    "POSTER": "Póster (url)",
+    "BORNCITY": "Lugar de nacimiento",
+    "RATING": "Puntuación"
+  },
+  "MOVIES": {
+    "MOVIES_LIST": "Lista de Peliculas",
+    "RATING": "Puntuación",
+    "DURATION": "Duración",
+    "ACTORS": "Actores",
+    "GENRES": "Géneros",
+    "GENRE": "Género",
+    "COMEDY": "Comedia",
+    "HORROR": "Terror",
+    "MUSICAL": "Musical",
+    "ROMANCE": "Romance",
+    "TITLE": "Titulo",
+    "POSTER": "Póster (url)",
+    "YEAR": "Año",
+    "ARE_YOU_SURE": "¿Eliminar este item?",
+    "DELETE": "Borrar",
+    "CANCEL": "Cancelar"
+  }
+}

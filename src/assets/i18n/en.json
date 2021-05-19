@@ -1,0 +1,32 @@
+{
+  "ACTORS": {
+    "FULL_NAME": "Full name",
+    "GENDER": "Gender",
+    "BIRTHDATE": "Birthdate",
+    "MOVIES": "Movies",
+
+    "FIRST_NAME": "Nane",
+    "LAST_NAME": "Last name",
+    "POSTER": "Poster (url)",
+    "BORNCITY": "Borncity",
+    "RATING": "Rating"
+  },
+  "MOVIES": {
+    "MOVIES_LIST": "Movie List",
+    "RATING": "Rating",
+    "DURATION": "Duration",
+    "ACTORS": "Actors",
+    "GENRES": "Genres",
+    "GENRE": "Genre",
+    "COMEDY": "Comedy",
+    "HORROR": "Horror",
+    "MUSICAL": "Musical",
+    "ROMANCE": "Romance",
+    "TITLE": "Title",
+    "POSTER": "Poster (url)",
+    "YEAR": "Year",
+    "ARE_YOU_SURE": "Are you sure you want to delete this item?",
+    "DELETE": "Delete",
+    "CANCEL": "Cancel"
+  }
+}

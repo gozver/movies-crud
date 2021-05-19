@@ -1,0 +1,17 @@
+<div class="container">
+  <h2 mat-dialog-title>{{ 'Deletion information' | translate }}</h2>
+
+  <mat-dialog-content>
+    {{ 'Are you sure you want to delete this item?' | translate }}
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">
+      {{ 'Cancel' | translate }}
+    </button>
+
+    <button class="mat-raised-button mat-warn" [mat-dialog-close]="true">
+      OK
+    </button>
+  </mat-dialog-actions>
+</div>

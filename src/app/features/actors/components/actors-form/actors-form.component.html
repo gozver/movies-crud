@@ -1,0 +1,41 @@
+<form [formGroup]="actorForm" class="actor-form" novalidate>
+  <mat-form-field class="input">
+    <mat-label>{{ 'ACTORS.FIRST_NAME' | translate }}</mat-label>
+    <input matInput placeholder="Enter first name" formControlName="first_name" />
+  </mat-form-field>
+
+  <mat-form-field class="input">
+    <mat-label>{{ 'ACTORS.LAST_NAME' | translate }}</mat-label>
+    <input matInput placeholder="Enter last name" formControlName="last_name" />
+  </mat-form-field>
+
+  <mat-form-field class="input">
+    <mat-label>{{ 'ACTORS.POSTER' | translate }}</mat-label>
+    <input matInput placeholder="Enter image" formControlName="img" type="url" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'ACTORS.GENDER' | translate }}</mat-label>
+    <mat-select formControlName="gender">
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Female</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{ 'ACTORS.BIRTHDATE' | translate }}</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthdate">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="input">
+    <mat-label>{{ 'ACTORS.BORNCITY' | translate }}</mat-label>
+    <input matInput placeholder="Enter Borncity" formControlName="bornCity" />
+  </mat-form-field>
+
+  <mat-form-field class="input">
+    <mat-label>{{ 'ACTORS.RATING' | translate }}</mat-label>
+    <input matInput placeholder="Enter rating" formControlName="rating" type="number" />
+  </mat-form-field>
+</form>

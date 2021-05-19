@@ -1,0 +1,52 @@
+<app-loading-feedback [state]="state" (retryPressed)="getMovie()">
+  <div class="movie-detail-container" *ngIf="movie">
+    <div class="poster-container">
+      <img class="movie-detail-poster" [src]="movie.poster" (error)="setDefaultImg()" alt="{{movie.title}}">
+    </div>
+
+    <mat-list class="detail-rating-list">
+      <mat-list-item>
+        <div mat-line><h2>{{ 'MOVIES.RATING' | translate }}</h2></div>
+        <div mat-line><h3>{{ movie.imdbRating }}</h3></div>
+      </mat-list-item>
+
+      <mat-list-item class="detail-duration">
+        <div mat-line><h2>{{ 'MOVIES.DURATION' | translate }}</h2></div>
+        <div mat-line><h3>{{ movie.duration | duration}}</h3></div>
+      </mat-list-item>
+    </mat-list>
+
+    <mat-list class="list-padding">
+      <h2>{{ 'MOVIES.ACTORS' | translate }}</h2>
+      
+      <mat-divider></mat-divider>
+
+      <div class="actors-list" *ngFor="let actor of actors" [routerLink]="['/actors', actor.id]">
+        <p class="link">
+          <span>{{ actor.first_name }} {{ actor.last_name }}</span>
+          <mat-icon>arrow_forward</mat-icon>
+        </p>
+      </div>
+    </mat-list>
+
+    <mat-list class="list-padding">
+      <h2>{{ 'MOVIES.GENRES' | translate }}</h2>
+      <mat-divider></mat-divider>
+      <span *ngFor="let genre of movie.genre" class="movie-genre">#{{ genre | translate }} </span>
+    </mat-list>
+
+    <div class="btn-container">
+      <button mat-fab class="go-back" aria-label="Go Back" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+
+      <button mat-fab color="primary" aria-label="Edit actor" [routerLink]="['/movies', movie.id, 'edit']">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-fab color="warn" aria-label="Delete actor" (click)="deleteMovie()">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+</app-loading-feedback>

@@ -1,0 +1,26 @@
+<app-loading-feedback [state]="state" (retryPressed)="getActorsList()">
+  <div class="actor-container" *ngFor="let actor of actorsList; let i = index" [routerLink]="['/actors', actor.id]">
+    <app-card
+      [title]="actor.first_name + ' ' + actor.last_name"
+      [imageSrc]="actor.img"
+    >
+      <div class="actor-data-container">
+        <div class="birthdate">
+          {{ actor.birthdate }}
+        </div>
+
+        <div class="rating">
+          {{ actor.rating }}
+        </div>
+      </div>
+    </app-card>
+  </div>
+
+  <div class="bottom-btn-container">
+    <button mat-fab color="primary" class="add-btn" aria-label="Add actor" [routerLink]="['/actors', 'new']">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</app-loading-feedback>
+
+

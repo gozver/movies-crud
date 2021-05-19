@@ -1,0 +1,23 @@
+.actor-container {
+  margin: auto;
+  max-width: 700px;
+  cursor: pointer;
+
+  .actor-data-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.bottom-btn-container  {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .add-btn {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+  }
+}

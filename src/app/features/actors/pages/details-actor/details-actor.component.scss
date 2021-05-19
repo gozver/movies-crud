@@ -1,0 +1,53 @@
+.details-container {
+  margin: auto;
+  max-width: 800px;
+
+  .img-container {
+    text-align: center;
+    margin-top: 30px;
+
+    img {
+      max-width: 600px;
+    }
+  }
+
+  .items-container  {
+    margin: auto;
+    margin-top: 10px;
+    max-width: 600px;
+
+    .btn-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      button {
+        margin-left: 5px;
+
+        &.go-back {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+
+  p.link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  p span {
+    text-decoration: underline;
+  }
+}
+

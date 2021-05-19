@@ -1,0 +1,13 @@
+<app-loading-feedback [state]="state" (retryPressed)="getMovieList()">
+  <div class="movie-container">
+    <app-card *ngFor="let movie of movies" [imageSrc]="movie.poster" [title]="movie.title" [routerLink]="['/movies', movie.id]">
+        <span *ngFor="let genre of movie.genre" class="movieGenre">#{{ genre }}</span>
+    </app-card>
+  </div>
+
+  <div class="bottom-btn-container">
+    <button mat-fab color="primary" class="add-btn" aria-label="Add an actor" [routerLink]="['/movies', 'new']">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</app-loading-feedback>

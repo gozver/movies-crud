@@ -1,0 +1,52 @@
+<app-loading-feedback [state]="state" (retryPressed)="getData()">
+  <div class="details-container" *ngIf="actor">
+    <div class="img-container">
+      <img [src]="actor?.img" (error)="setDefaultImg()" alt="actor.first_name">
+    </div>
+
+    <div class="items-container">
+      <div class="item">
+        <h2>{{ 'ACTORS.FULL_NAME' | translate }}</h2>
+        <p>{{ actor?.first_name }} {{ actor?.last_name }}</p>
+      </div>
+
+      <div class="item">
+        <h2>{{ 'ACTORS.GENDER' | translate }}</h2>
+        <p>{{ actor?.gender }}</p>
+      </div>
+
+      <div class="item">
+        <h2>{{ 'ACTORS.BIRTHDATE' | translate }}</h2>
+        <p>{{ actor?.birthdate }}</p>
+      </div>
+
+      <div class="item">
+        <h2>{{ 'ACTORS.RATING' | translate }}</h2>
+        <p>{{ actor?.movies }}</p>
+      </div>
+
+      <h2>{{ 'ACTORS.MOVIES' | translate }}</h2>
+      <span class="item" *ngFor="let movie of moviesList">
+        <p class="link" [routerLink]="['/movies', movie.id]">
+          <span>{{ movie.title }}</span>
+          <mat-icon>arrow_forward</mat-icon>
+        </p>
+      </span>
+
+      <div class="btn-container">
+        <button mat-fab class="go-back" aria-label="Go Back" (click)="goBack()">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+
+        <button mat-fab color="primary" aria-label="Edit actor" [routerLink]="['/actors', actor.id, 'edit']">
+          <mat-icon>edit</mat-icon>
+        </button>
+
+        <button mat-fab color="warn" aria-label="Delete actor" (click)="deleteActor()">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</app-loading-feedback>
+

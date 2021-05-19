@@ -1,0 +1,56 @@
+<form class="movie-form" [formGroup]="movieForm">
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.TITLE' | translate }}</mat-label>
+    <input matInput formControlName="title">
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.POSTER' | translate }} (url)</mat-label>
+    <input matInput formControlName="poster">
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.GENRES' | translate }}</mat-label>
+    <input matInput formControlName="genre" [formControl]="genretCtrl" [matChipInputFor]="chipList" (matChipInputTokenEnd)="add($event)">
+  </mat-form-field>
+
+  <mat-chip-list #chipList aria-label="Genre selection" class="chip-list">
+    <mat-chip *ngFor="let gen of genresSelected" (removed)="removeGenre(gen)">
+      {{gen}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.ACTORS' | translate }}</mat-label>
+    <mat-select formControlName="actors"  (selectionChange)="selectChangeHandler($event)">
+        <mat-option *ngFor="let actor of actors" [value]="{id: actor.id, first_name: actor.first_name, last_name: actor.last_name}" >
+          {{actor.first_name}}  {{actor.last_name}}
+        </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-chip-list #chipList aria-label="Actors selection" class="chip-list">
+    <mat-chip  *ngFor="let actor of actorsObjectSelected" (removed)="removeActor(actor.id)">
+      {{actor.first_name}}  {{actor.last_name}}
+      <mat-icon matChipRemove>cancel</mat-icon>
+    </mat-chip>
+  </mat-chip-list>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.YEAR' | translate }}</mat-label>
+    <input matInput formControlName="year">
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.DURATION' | translate }}</mat-label>
+    <input matInput formControlName="duration" type="number">
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>{{ 'MOVIES.RATING' | translate }}</mat-label>
+    <input matInput formControlName="imdbRating" type="number">
+  </mat-form-field>
+
+  <ng-content></ng-content>
+</form>
